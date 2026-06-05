@@ -1,25 +1,20 @@
-<p align="center">
-  <img src="resources/icons/cloud-scraper.svg" alt="Cloud Scraper" width="120">
-</p>
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# cloud-scraper
 
-<h1 align="center">Cloud Scraper</h1>
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/cloud-scraper)
 
-<p align="center">
-  Cloud data export GUI — download your personal data from Google, Microsoft, and Apple.<br>
-  Built by <a href="https://openfactory.tech">OpenFactory</a>
-</p>
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-![Cloud Scraper screenshot](docs/screenshot.png)
+## Architecture
 
-## Features
-
-- **Google** — Gmail, Contacts, Calendar, Drive, Photos
-- **Microsoft** — Outlook Mail, Contacts, Calendar, OneDrive
-- **Apple** *(experimental)* — Contacts, Calendar, iCloud Drive
-
-Connect to one or more providers, select the data types you want, and export everything to a local folder. No data leaves your machine — exports go straight to disk.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
 ## Install
+
 
 ### Option A: Debian/Ubuntu package
 
@@ -41,6 +36,7 @@ The setup script installs system dependencies (GTK4, libadwaita, PyGObject) and 
 
 ## Usage
 
+
 ```bash
 # If installed via package
 cloud-scraper
@@ -49,83 +45,50 @@ cloud-scraper
 python -m data_scraper
 ```
 
-## Provider Setup
+## Configuration
 
-### Google
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-OAuth credentials are bundled with the .deb package. When running from source, place your OAuth credentials at one of:
+## CI
 
-- `~/.config/data-scraper/google-credentials.json`
-- `./credentials/google.json`
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-Create credentials at [Google Cloud Console](https://console.cloud.google.com/apis/credentials) (Desktop app type).
+## Mirror chain
 
-### Microsoft
-
-An embedded Azure AD client ID is included. To use your own, create `~/.config/data-scraper/microsoft.json`:
-
-```json
-{"client_id": "your-azure-app-client-id"}
-```
-
-Register an app at [Azure Portal](https://portal.azure.com) with the "Mobile and desktop applications" platform.
-
-### Apple (experimental)
-
-Uses Apple ID + app-specific password (no OAuth). Generate an app-specific password at [appleid.apple.com](https://appleid.apple.com/account/manage) under Sign-In and Security.
-
-## Export Formats
-
-| Data Type | Format |
-|-----------|--------|
-| Email | `.eml` files (one per message) |
-| Contacts | `.vcf` (vCard 3.0) |
-| Calendar | `.ics` (iCalendar) |
-| Drive / OneDrive | Original files |
-| Photos | Original files |
-
-## Requirements
-
-- Python 3.11+
-- GTK4 + libadwaita
-- PyGObject
-
-### System packages
-
-**Debian/Ubuntu:**
-```bash
-sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adw-1 python3-venv
-```
-
-**Fedora:**
-```bash
-sudo dnf install gtk4-devel libadwaita-devel python3-gobject
-```
-
-## Architecture
-
-Cloud Scraper is part of the [OpenFactory](https://openfactory.tech) data sovereignty stack.
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/cloud-scraper`](https://github.com/Interested-Deving-1896/cloud-scraper) and mirrored through:
 
 ```
-YOUR NETWORK              SOVEREIGNTY LAYER              CORPORATE CLOUDS
-(you own this)            (your tools)                   (they control this)
-
- Home Lab / Servers   <── OpenFactory ──────────────>   AWS (hosting/CDN)
- Personal Devices     <──   Build OS images             Google Cloud
- Managed Network      <──   Deploy to fleet             Azure
- Local Data Store     <──   Compliance engine
-                                                         Google (Gmail, Drive,
- Deployed OS Images   <── Cloud Scraper ─ ─ ─ ─ ─ ─>     Photos, Calendar)
-   Debian, Ubuntu,        Export personal data           Microsoft (Outlook,
-   Fedora, openSUSE,      OAuth2 read-only                OneDrive, Teams)
-   Elster OS              No intermediary servers        Apple (iCloud, Photos)
-                          Saves straight to disk         Other SaaS
+Interested-Deving-1896/cloud-scraper  ──►  OpenOS-Project-OSP/cloud-scraper  ──►  OpenOS-Project-Ecosystem-OOC/cloud-scraper
 ```
 
-**OpenFactory** builds custom Linux OS images and deploys them to your hardware. **Cloud Scraper** pulls your personal data out of corporate clouds onto that hardware. Together they form a complete sovereign computing stack — your machines, your OS, your data, no corporate dependency.
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-![Data Sovereignty Architecture](docs/architecture.svg)
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
 ## License
 
-[AGPL-3.0](LICENSE)
+<!-- AI:start:license -->
+[AGPL-3.0](https://github.com/Interested-Deving-1896/cloud-scraper/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
